@@ -626,7 +626,11 @@ p {
 .register-card {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 40px;
+  grid-template-areas:
+    "qr title"
+    "qr action";
+  column-gap: 40px;
+  row-gap: 4px;
   align-items: center;
   max-width: 760px;
   margin: 0 auto;
@@ -637,7 +641,19 @@ p {
   box-shadow: var(--shadow);
 }
 
+.register-card h2 {
+  grid-area: title;
+  align-self: end;
+}
+
+.register-card .btn {
+  grid-area: action;
+  justify-self: start;
+  align-self: start;
+}
+
 .register-card img {
+  grid-area: qr;
   width: 160px;
   height: 160px;
   border: 1px solid var(--line);
@@ -657,9 +673,18 @@ p {
 @media (max-width: 640px) {
   .register-card {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "qr"
+      "action";
+    row-gap: 20px;
     text-align: center;
     justify-items: center;
     padding: 28px 20px;
+  }
+
+  .register-card .btn {
+    justify-self: center;
   }
 }
 
