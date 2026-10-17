@@ -1436,6 +1436,58 @@ p {
   margin-bottom: 0.6em;
 }
 
+/* CMT submission guide */
+
+.guide h2 {
+  margin-top: 1.6em;
+}
+
+.guide h3 {
+  font-size: 1.1rem;
+}
+
+.guide hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 40px 0;
+}
+
+.guide code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.guide a {
+  word-break: break-word;
+}
+
+.shot {
+  margin: 24px 0 28px;
+}
+
+.shot img {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+.shot figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.callout {
+  background: var(--accent-100);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+}
+
 .empty-state {
   text-align: center;
   padding: 48px 24px;
