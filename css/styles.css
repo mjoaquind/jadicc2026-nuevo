@@ -625,10 +625,11 @@ p {
 
 .register-card {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto;
   grid-template-areas:
     "qr title"
     "qr action";
+  justify-content: center;
   column-gap: 40px;
   row-gap: 4px;
   align-items: center;
