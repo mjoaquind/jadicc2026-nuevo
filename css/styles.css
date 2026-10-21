@@ -849,6 +849,27 @@ p {
   margin: 0;
 }
 
+/* Simultaneous sessions: one card per activity, side by side */
+
+.parallel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.session-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--c, var(--line));
+  border-radius: var(--radius-sm);
+  padding: 16px 18px 18px;
+}
+
+.session-card h3 {
+  font-size: 1.08rem;
+}
+
 .papers {
   margin-top: 12px;
   border: 1px solid var(--line);
