@@ -19,8 +19,8 @@
 
   --c-taller: #9a6a12;
   --c-taller-bg: #fbf3e2;
-  --c-conf: #0c3c63;
-  --c-conf-bg: #e6eef6;
+  --c-conf: #0e7490;
+  --c-conf-bg: #e0f2f6;
   --c-mesa: #3f4fa0;
   --c-mesa-bg: #ebedf8;
   --c-demo: #24734a;
@@ -189,6 +189,7 @@ p {
   font-weight: 500;
   color: var(--ink-soft);
   text-decoration: none;
+  white-space: nowrap;
   border-radius: var(--radius-sm);
 }
 
@@ -209,7 +210,7 @@ p {
   color: #fff;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .nav-toggle {
     display: block;
   }
@@ -934,8 +935,37 @@ p {
 .legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: -12px 0 28px;
+  gap: 8px 20px;
+  list-style: none;
+  margin: -24px 0 24px;
+  padding: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c);
+}
+
+.session-body .badge::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--c);
+  vertical-align: 1px;
 }
 
 @media (max-width: 640px) {
@@ -1145,6 +1175,47 @@ p {
   .committees {
     grid-template-columns: 1fr;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Accommodation map
+   -------------------------------------------------------------------------- */
+
+.map-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-alt);
+  box-shadow: var(--shadow);
+}
+
+/* Google My Maps draws a 67px title/author bar inside the cross-origin
+   iframe; shift the frame up so that bar stays outside the visible box. */
+.map-embed {
+  --map-header: 67px;
+}
+
+.map-embed iframe {
+  position: absolute;
+  top: calc(-1 * var(--map-header));
+  left: 0;
+  width: 100%;
+  height: calc(100% + var(--map-header));
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .map-embed {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+.map-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 /* --------------------------------------------------------------------------
