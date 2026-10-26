@@ -1702,12 +1702,6 @@ p {
    Press table
    -------------------------------------------------------------------------- */
 
-.press-table-wrap {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
 .press-table {
   width: 100%;
   border-collapse: collapse;
@@ -1715,20 +1709,22 @@ p {
 
 .press-table th,
 .press-table td {
-  padding: 14px 18px;
+  padding: 16px 16px 16px 0;
   text-align: left;
-  vertical-align: top;
+  vertical-align: baseline;
   border-bottom: 1px solid var(--line);
 }
 
-.press-table tbody tr:last-child td {
-  border-bottom: 0;
+.press-table th:last-child,
+.press-table td:last-child {
+  padding-right: 0;
 }
 
 .press-table th {
-  background: var(--bg-alt);
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding-top: 0;
+  padding-bottom: 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1737,11 +1733,17 @@ p {
 .press-table td:first-child,
 .press-table td:last-child {
   white-space: nowrap;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
 .press-table a {
-  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.press-table a:hover {
+  color: var(--c-conf);
 }
 
 @media (max-width: 700px) {
@@ -1751,12 +1753,8 @@ p {
 
   .press-table tr {
     display: block;
-    padding: 14px 18px;
+    padding: 16px 0;
     border-bottom: 1px solid var(--line);
-  }
-
-  .press-table tbody tr:last-child {
-    border-bottom: 0;
   }
 
   .press-table td {
@@ -1771,7 +1769,6 @@ p {
   }
 
   .press-table td:last-child {
-    font-size: 0.9rem;
     margin-top: 4px;
   }
 }
