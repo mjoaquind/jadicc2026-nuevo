@@ -1732,9 +1732,16 @@ p {
 
 .press-table td:first-child,
 .press-table td:last-child {
-  white-space: nowrap;
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+.press-table td:first-child {
+  white-space: nowrap;
+}
+
+.press-table td:last-child {
+  width: 22%;
 }
 
 .press-table a {
@@ -1744,6 +1751,20 @@ p {
 
 .press-table a:hover {
   color: var(--c-conf);
+}
+
+.press-summary {
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.press-group + .press-group {
+  margin-top: 64px;
+}
+
+.press-group .section-head {
+  margin-bottom: 24px;
 }
 
 @media (max-width: 700px) {
@@ -1769,6 +1790,7 @@ p {
   }
 
   .press-table td:last-child {
-    margin-top: 4px;
+    width: auto;
+    margin-top: 6px;
   }
 }
